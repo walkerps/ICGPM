@@ -6,7 +6,7 @@ from nltk.corpus import wordnet
 
 def main(data):
 
-	print "Data is getting Cleaned"
+	#print "Data is getting Cleaned"
 
 	columns = ['OrderId','Firstname']
 
@@ -33,7 +33,7 @@ def main(data):
 	for name in data.Firstname:
 		name_list.append(name)
 
-	print "Midway point 1"
+	#print "Midway point 1"
 
 	for name in name_list:
 		if re.search(r'[0-9]',name):
@@ -55,7 +55,7 @@ def main(data):
 	for name in name_value:
 		data = data[data.Firstname != name]
 
-	print "midway point 2"
+	#print "midway point 2"
 	name_list = []
 	name_value = []
 
@@ -70,7 +70,7 @@ def main(data):
 
 	data.Firstname = map(lambda x:x.lower(),data.Firstname)
 
-	print "midway point 3"
+	#print "midway point 3"
 	name_list = []
 	name_value =[]
 
@@ -84,5 +84,5 @@ def main(data):
 	for name in name_value:
 		data = data[data.Firstname != name]
 
-	print "midway point 4"
+	#print "midway point 4"
 	return data				
