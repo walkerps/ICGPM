@@ -36,11 +36,11 @@ def index():
 			else:
 				data = pd.read_csv(file)
 			#file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-			print data.head(5)
+			#print data.head(5)
 			cleaned_data = main(data)
-			print "Data is all Cleaned"
-			print "\\\\"
-			print "Going to Classify the Data"
+			#print "Data is all Cleaned"
+			#print "\\\\"
+			#print "Going to Classify the Data"
 			classified_dataframe = model(cleaned_data)
 
 			classified_dataframe.to_csv(filename_tokenized[0]+".csv",index = False,encoding = 'utf-8')

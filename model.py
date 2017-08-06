@@ -65,7 +65,7 @@ def model(data):
 	last = []
 	leng = []
 
-	print "Starting feature Extractiont"
+	#print "Starting feature Extractiont"
 	name_list = []
 	for name in data.Firstname:
 		name_list.append(name)
@@ -80,7 +80,7 @@ def model(data):
 		last.append(feature[6])
 		leng.append(feature[7])
 
-	print "In between feature Extraction"
+	#print "In between feature Extraction"
 	data['noc'] = [noc[ii] for ii in range(len(noc))]
 	data['nov'] = [nov[ii] for ii in range(len(nov))]
 	data['nobc'] = [nobc[ii] for ii in range(len(nobc))]
@@ -92,7 +92,7 @@ def model(data):
 
 	dataframe_to_parse = dataframe_to_parse.drop(['OrderId','Firstname'],axis = 1)
 
-	print "Running model on data"
+	#print "Running model on data"
 	dataframe_to_parse = dataframe_to_parse.values
 	loaded_model = pickle.load(open('dataModel.sav','rb'))
 
